@@ -2,8 +2,7 @@ import requests
 import json
 
 key = "0ZOhGE1B47jm79qcL624pr3xHI6O81Q"
-name = input("Введите название предмета из стима
-             ")
+name = input("Введите название предмета из стима")
 
 def price_f4():
     url = 'https://market.csgo.com/api/v2/search-item-by-hash-name-specific?key='+key+'&hash_name='+name
