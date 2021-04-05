@@ -1,6 +1,6 @@
 import requests
 import time
-key = 'x36gQXE48Slzsnt2sR1meOZ9HMqRUA5'
+key = 'key from market api'
 def pinging():
     while True:
         1==1 
