@@ -97,5 +97,6 @@ def price_f6():
 def balance():
     urlmoney = 'https://market.csgo.com/api/v2/get-money?key='+key
     request = requests.get(urlmoney).json()
+    
     print(request['success'])
     print(request['money'])
