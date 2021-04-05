@@ -94,8 +94,8 @@ def price_f6():
     #urlsteam = "http://steamcommunity.com/market/priceoverview/?appid=570&market_hash_name="+name
     #steamp = requests.get(urlsteam)").json()
     #print(steamp)
-    def balance():
-    urlmoneysex = 'https://market.csgo.com/api/v2/get-money?key='+key
-    request = requests.get(urlmoneysex).json()
+def balance():
+    urlmoney = 'https://market.csgo.com/api/v2/get-money?key='+key
+    request = requests.get(urlmoney).json()
     print(request['success'])
     print(request['money'])
