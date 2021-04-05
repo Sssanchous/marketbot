@@ -93,4 +93,4 @@ def price_f6():
 #def steamprice():
     #urlsteam = "http://steamcommunity.com/market/priceoverview/?appid=570&market_hash_name="+name
     #steamp = requests.get(urlsteam)").json()
-    #print(steamp)
+    #print(steamp) [eq
