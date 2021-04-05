@@ -2,23 +2,26 @@ import requests
 import json
 
 key = "0ZOhGE1B47jm79qcL624pr3xHI6O81Q"
-name = input("Введите название предмета из стима")
 
-def price_f4():
+
+###############################Поиск всех цен по названию предмета#################################################################
+
+def price_f6():
+    global name
+    name = input("Введите название предмета из стима: ")
     url = 'https://market.csgo.com/api/v2/search-item-by-hash-name-specific?key='+key+'&hash_name='+name
     
     gun = requests.get(url+' (Factory New)').json()
     price = gun["data"]
     
     try:
-        print("Цена по предмета (Прямо с завода)")
+        print(".")
+        print("               Цена предмета (Прямо с завода)")
         print(".")
         print("Цена первого лота: ",  str(price[0]["price"])  .replace(' ', '')[:-2])
         print("Цена второго лота: ",  str(price[1]["price"])  .replace(' ', '')[:-2])
         print("Цена третьего лота: ",  str(price[2]["price"])  .replace(' ', '')[:-2])
         print("Цена четвертого лота: ",  str(price[3]["price"])  .replace(' ', '')[:-2])
-        print("Цена пятого лота: ",  str(price[4]["price"])  .replace(' ', '')[:-2])
-        print("Цена шестого лота: ",  str(price[5]["price"])  .replace(' ', '')[:-2])
     except IndexError:
         print("нет предмета")
 
@@ -27,39 +30,67 @@ def price_f4():
 
     try:
         print(".")
-        print("Цена по предмета (Немного поношенное )")
+        print("               Цена предмета (Немного поношенное)")
         print(".")
         print("Цена первого лота: ",  str(price[0]["price"])  .replace(' ', '')[:-2])
         print("Цена второго лота: ",  str(price[1]["price"])  .replace(' ', '')[:-2])
         print("Цена третьего лота: ",  str(price[2]["price"])  .replace(' ', '')[:-2])
         print("Цена четвертого лота: ",  str(price[3]["price"])  .replace(' ', '')[:-2])
-        print("Цена пятого лота: ",  str(price[4]["price"])  .replace(' ', '')[:-2])
-        print("Цена шестого лота: ",  str(price[5]["price"])  .replace(' ', '')[:-2])
         print(".")
     except IndexError:
         print("нет предмета")
+    
 
     gun = requests.get(url+" (Well-Worn)").json()
     price = gun["data"]
 
     try:
-        print("Цена по предмета (Немного поношенное )")
+        print("               Цена предмета (Поношенное)")
         print(".")
         print("Цена первого лота: ",  str(price[0]["price"])  .replace(' ', '')[:-2])
         print("Цена второго лота: ",  str(price[1]["price"])  .replace(' ', '')[:-2])
         print("Цена третьего лота: ",  str(price[2]["price"])  .replace(' ', '')[:-2])
         print("Цена четвертого лота: ",  str(price[3]["price"])  .replace(' ', '')[:-2])
-        print("Цена пятого лота: ",  str(price[4]["price"])  .replace(' ', '')[:-2])
-        print("Цена шестого лота: ",  str(price[5]["price"])  .replace(' ', '')[:-2])
         print(".")
     except IndexError:
         print("нет предмета")
 
-    
+    gun = requests.get(url+" (Field-Tested)").json()
+    price = gun["data"]
 
-    
-    
-    
+    try:
+        print("               Цена предмета (После Полевых Испытаний)")
+        print(".")
+        print("Цена первого лота: ",  str(price[0]["price"])  .replace(' ', '')[:-2])
+        print("Цена второго лота: ",  str(price[1]["price"])  .replace(' ', '')[:-2])
+        print("Цена третьего лота: ",  str(price[2]["price"])  .replace(' ', '')[:-2])
+        print("Цена четвертого лота: ",  str(price[3]["price"])  .replace(' ', '')[:-2])
+        print(".")
+    except IndexError:
+        print("нет предмета")
 
+    gun = requests.get(url+" (Battle-Scarred)").json()
+    price = gun["data"]
+    
+    try:
+        print("               Цена предмета (Закалённое в боях)")
+        print(".")
+        print("Цена первого лота: ",  str(price[0]["price"])  .replace(' ', '')[:-2])
+        print("Цена второго лота: ",  str(price[1]["price"])  .replace(' ', '')[:-2])
+        print("Цена третьего лота: ",  str(price[2]["price"])  .replace(' ', '')[:-2])
+        print("Цена четвертого лота: ",  str(price[3]["price"])  .replace(' ', '')[:-2])
+    except IndexError:
+        print("нет предмета")
+        
+######################Не сделано(Нужно с api steam)
+#def autoaccept():
+    #urla = "https://market.csgo.com/api/v2/trade-request-give-p2p-all?key="+key # данные для создания всех трейдов
+    #urlb = "" # запрос на передачу вещей
+    #trade = requests.get(urla).json
+    #print(trade)
 
-price_f4()
+###################Не сделано(Не работает)
+#def steamprice():
+    #urlsteam = "http://steamcommunity.com/market/priceoverview/?appid=570&market_hash_name="+name
+    #steamp = requests.get(urlsteam)").json()
+    #print(steamp)
